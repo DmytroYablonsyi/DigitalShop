@@ -33,7 +33,6 @@ const Header = () => {
               <LinkContainer to='/'>
                 <Navbar.Brand><FaLaptop/> ProShop</Navbar.Brand>
               </LinkContainer>
-              <SearchBox/>
                 <Navbar.Toggle  aria-controls='basic-navbar-nav'/>
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='ms-auto align-items-end'>
@@ -81,6 +80,7 @@ const Header = () => {
                 </Navbar.Collapse>
              </Container>
         </Navbar>
+        <SearchBox/>
     </header>
   )
 }

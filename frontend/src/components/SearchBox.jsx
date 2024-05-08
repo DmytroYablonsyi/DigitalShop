@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Col } from "react-bootstrap"
 import { useParams, useNavigate } from "react-router-dom"
 
 const SearchBox = () => {
@@ -17,13 +17,16 @@ const SearchBox = () => {
         }
     }
   return (
-    <Form onSubmit={submitHandler} className="d-flex align-items-right">
-        <Form.Control type="text" name='q' onChange={(e) => setKeyword(e.target.value)} value={keyword} placeholder="Search Products" className="mr-sm-2 ml-sm-5">
-        </Form.Control>
-        <Button type="submit" variant="outline-light" className="p-2 mx-2">
-            Search
-        </Button>
-    </Form>
+    <Col xs={12} sm={6} lg={4}>
+        <Form onSubmit={submitHandler} className=" d-flex align-items-right">
+            <Form.Control type="text" name='q' onChange={(e) => setKeyword(e.target.value)} value={keyword} placeholder="Search Products" className="mr-sm-2 ml-sm-5">
+            </Form.Control>
+            <Button type="submit" variant="outline-dark" className="p-2 mx-2">
+                Search
+            </Button>
+        </Form>
+    </Col>
+       
   )
 }
 
