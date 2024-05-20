@@ -8,7 +8,6 @@ import { savePaymentMethod } from '../slices/cartSlice';
 
 const PaymentScreen = () => {
 const [paymentMethod, setPaymentMethod] = useState('PayPal');
-
 const dispatch = useDispatch();
 const navigate = useNavigate();
 
@@ -34,36 +33,19 @@ const submitHandler = (e) => {
             <Form onSubmit={ submitHandler }>
                 <Form.Group>
                     <Form.Label as='legend'>Select Method</Form.Label>
-                    {/* <Col>
+                    <Col>
                         <Form.Check 
                             type="radio"
                             className="MY-2"
                             id="PayPal"
                             label='PayPal or Credit Card'
                             name="paymentMethod"
-                            value={paymentMethod}
+                            value='PayPal'
                             checked 
                             onChange={(e) => setPaymentMethod(e.target.value)}
-                            onClick={(e) => console.log(e.target.value)}
                             >
-                            
-                            </Form.Check>
-                            
-                    </Col> */}
-                    <Col>
-                        <Form.Check 
-                            type="radio"
-                            className="MY-2"
-                            label='Cash'
-                            id="PayPal"
-                            name="paymentMethod"
-                            value='Cash'
-                            checked 
-                            onChange={(e) => setPaymentMethod(e.target.value)}
-                            onClick={(e) => console.log(e.target.value)}
-                            >
-                            </Form.Check>
-                    </Col>
+                            </Form.Check>  
+                    </Col> 
                     
                 </Form.Group>
                 <Button type="submit" variant="primary">

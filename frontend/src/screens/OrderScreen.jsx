@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Row, Col, ListGroup, Image, Button, Card } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { useGetOrderDetailsQuery, usePayOrderMutation, useDeliverOrderMutation } from '../slices/ordersApiSlice';
+import { useGetOrderDetailsQuery, usePayOrderMutation, useDeliverOrderMutation, useGetPayPalClientIdQuery } from '../slices/ordersApiSlice';
 
 
 
@@ -14,6 +15,10 @@ const { id: orderId } = useParams();
 const { data:order, refetch, isLoading, error } = useGetOrderDetailsQuery(orderId);
 
 const [payOrder, { isLoading: loadingPay }] =usePayOrderMutation();
+
+// const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+
+// const { data: paypal, isLoading: loadingPaypal, error: errorPaypal } = useGetPayPalClientIdQuery();
 
 const [deliverOrder, { isLoading: loadingDeliver }] = useDeliverOrderMutation();
 
